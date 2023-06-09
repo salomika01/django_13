@@ -10,7 +10,8 @@ def enter_info(request):
         favorite_book_id = request.POST['favorite_book']
 
         # Create a new reader object
-        reader = Reader.objects.create(name=name, email=email, date_of_birth=date_of_birth, favorite_book_id=favorite_book_id)
+        reader = Reader.objects.create(name=name, email=email, date_of_birth=date_of_birth,
+                                       favorite_book_id=favorite_book_id)
 
         return render(request, 'reader/thank_you.html', {'reader': reader})
     else:
